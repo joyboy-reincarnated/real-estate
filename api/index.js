@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGODB).then(()=>{
 }).catch((err)=>{
     console.log(err)
 })
-
+ 
 const app = express();
 
 app.listen(3000,()=>{
@@ -32,7 +32,7 @@ app.use((err,req,res,next)=>{
         message,
 
     })
-})
+})  
 
 app.get('/test', (req, res)=>{
     res.send("Hello, world!")
