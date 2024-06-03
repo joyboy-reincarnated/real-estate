@@ -58,16 +58,25 @@ export default function Listing() {
       )}
       {listing && !loading && !error && (
         <div>
-          <Swiper navigation>
+          <Swiper navigation   style={{
+          '--swiper-navigation-color': '#fff',
+          '--swiper-pagination-color': '#fff',
+        }}
+        loop={true}
+        spaceBetween={10}
+        className="mySwiper2">
             {listing.imageUrls.map((url) => (
               <SwiperSlide key={url}>
-                <div
+                <div className="">
+                  <img src={url} alt="Property Image"  className="h-[500px] w-full"/>
+                </div>
+                {/* <div
                   className="h-[500px]"
                   style={{
                     background: `url(${url}) center  no-repeat`,
                     backgroundSize: "cover",
                   }}
-                ></div>
+                ></div> */}
               </SwiperSlide>
             ))}
           </Swiper>

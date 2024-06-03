@@ -70,19 +70,29 @@ export default function Home() {
       </div>
 
       {/* swiper */}
-      <Swiper navigation>
+      <Swiper navigation  
+      yle={{
+        '--swiper-navigation-color': '#fff',
+        '--swiper-pagination-color': '#fff',
+      }}
+      loop={true}
+      spaceBetween={10}
+      className="mySwiper2">
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
             <SwiperSlide>
-              <div
+              <div className="">
+                  <img src={listing.imageUrls[0]} alt="Property Image"  className="h-[500px] w-full"/>
+                </div>
+              {/* <div
                 style={{
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
                   backgroundSize: 'cover',
                 }}
                 className='h-[500px]'
                 key={listing._id}
-              ></div>
+              ></div> */}
             </SwiperSlide>
           ))}
       </Swiper>
